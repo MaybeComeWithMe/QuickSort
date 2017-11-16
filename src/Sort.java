@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Sort {
     public static void main(String[] args) {
-        List<Integer> myArray = new ArrayList<>(){{
+        List<Integer> myArray = new ArrayList<>() {{
             add(6);
             add(5);
             add(7);
@@ -11,6 +11,12 @@ public class Sort {
             add(2);
         }};
 
-    new ArrayQuickSort(myArray).sortArray();
+        ArrayQuickSort arrayQuickSort = new ArrayQuickSort(myArray);
+        arrayQuickSort.sort(0, myArray.size() - 1);
+        ArrayList<Integer> arrayList = (ArrayList<Integer>) arrayQuickSort.getArray();
+
+        for (Integer integer : arrayList) {
+           System.out.print(integer + " ");
+        }
     }
 }
